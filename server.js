@@ -22,8 +22,8 @@ app.get("/products",(rest,resp)=>{
      mongoClient.connect("mongodb+srv://mongodb:mongodb@cluster0.35ipz.mongodb.net/sample_analytics?retryWrites=true&w=majority",(error,connection)=>{
                if(error) throw error;
                else{
-                   const db=connection.db("sample_analytics");
-                   db.collection("accounts").find().toArray((error,array)=>{
+                   const db=connection.db("sample_supplies");
+                   db.collection("sales").find().toArray((error,array)=>{
                        if(error) throw error;
                        else{
                            resp.send(array);
